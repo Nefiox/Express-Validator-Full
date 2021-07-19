@@ -17,7 +17,7 @@
 								<label><b>Nombre completo:</b></label>
 								<input type="text" 
 								name="fullName" 
-								class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %> ">
+								class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.fullName : null %>">
 								<div class="text-danger">
 									<% if (locals.errors && errors.fullName) { %>
 										<p>
@@ -30,7 +30,7 @@
 						<div class="col-md-6 my-1">
 							<div class="form-group">
 								<label><b>Correo electrónico:</b></label>
-								<input type="text" name="email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %> ">
+								<input type="text" name="email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %> " value="<%= locals.oldData ? oldData.email : null %>">
 								<div class="text-danger">
 									<% if (locals.errors && errors.email) { %>
 										<p>
@@ -56,29 +56,38 @@
 						<div class="col-md-6 my-1">
 							<div class="form-group">
 								<label><b>País de nacimiento:</b></label>
-								<select name="country" class="form-select <%= locals.errors && errors.country ? 'is-invalid' : null %> ">
+								<select name="country" class="form-select <%= locals.errors && errors.country ? 'is-invalid' : null %>">
 									<option value="">Elegí un país</option>
 									<%  
 										let countries = ['Argentina', 'Bolivia', 'Brasil', 'Colombia', 'Chile', 'Ecuador', 'Paraguay', 'Perú', 'Uruguay', 'Venezuela'];
 									%>
 									<% for (const oneCountry of countries) { %>
-										<option value="<%= oneCountry %>"> <%= oneCountry %> </option>
+										<option 
+										value="<%= oneCountry %>"
+										<%= locals.oldData && (oneCountry === oldData.country) ? 'selected' : null %> 
+										> <%= oneCountry %> </option>
 									<% } %>
 								</select>
-								<div class="text-danger">
-									<% if (locals.errors && errors.country) { %>
+								<% if (locals.errors && errors.country) { %>
+									<div class="text-danger">
 										<p>
 											<%= errors.country.msg %> 
 										</p>
+									</div>
 									<% } %>
-								</div>
 							</div>
 						</div>
 						<div class="col-md-6 my-1">
 							<div class="form-group">
 								<label><b>Imagen de perfil:</b></label>
 								<input class="form-control" type="file" name="avatar">
-								<div class="invalid-feedback"></div>
+								<% if (locals.errors && errors.avatar) { %>
+									<div class="text-danger">
+										<p>
+											<%= errors.avatar.msg %> 
+										</p>
+									</div>
+									<% } %>
 							</div>
 						</div>
 						<div class="col-12 my-3">

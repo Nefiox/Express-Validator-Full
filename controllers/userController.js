@@ -6,12 +6,14 @@ const controller = {
 	},
 	processRegister: (req, res) => {
 		const resultValidation = validationResult(req);
-		
+
 		if(resultValidation.errors.length > 0) {
 			return res.render('userRegisterForm', {
-				errors: resultValidation.mapped()
+				errors: resultValidation.mapped(),
+				oldData: req.body
 			});
 		}
+		return res.send('<h1>Validaciones sin errores</h1>');
 	},
 	login: (req, res) => {
 		return res.render('userLoginForm');
