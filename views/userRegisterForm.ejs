@@ -10,12 +10,12 @@
 			<div class="col-md-10">
 				<h2>Formulario de registro</h2>
 	
-				<form method="POST" action="/user/register">
+				<form method="POST" action="/user/register" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-md-6 my-1">
 							<div class="form-group">
 								<label><b>Nombre completo:</b></label>
-								<input type="text" name="full_name" class="form-control">
+								<input type="text" name="fullName" class="form-control">
 								<div class="invalid-feedback">
 								</div>
 							</div>
@@ -45,7 +45,7 @@
 										let countries = ['Argentina', 'Bolivia', 'Brasil', 'Colombia', 'Chile', 'Ecuador', 'Paraguay', 'Perú', 'Uruguay', 'Venezuela'];
 									%>
 									<% for (const oneCountry of countries) { %>
-										<option value="<%= oneCountry.code %>"> <%= oneCountry.name %> </option>
+										<option value="<%= oneCountry %>"> <%= oneCountry %> </option>
 									<% } %>
 								</select>
 								<div class="invalid-feedback">
