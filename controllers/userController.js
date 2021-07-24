@@ -35,10 +35,37 @@ const controller = {
 		};
 		let userCreated = User.create(userToCreate);
 
-		return res.render('/user/login');
+		return res.redirect('/user/login');
 	},
 	login: (req, res) => {
 		return res.render('userLoginForm');
+	},
+	loginProcess: (req, res) => {
+		let userToLogin = User.findByField('email', req.body.email);
+
+		if (userToLogin) {
+			let passwordOk = bcryptjs.compareSync(req.body.password, userToLogin.password);
+			if (passwordOk) {
+				return res.redirect('/user/profile');
+			}
+			return res.render('userLoginForm', {
+				errors: {
+					email: {
+						msg: 'Datos inválidos'
+					}
+				},
+				oldData: req.body
+			});
+		}
+
+		return res.render('userLoginForm', {
+			errors: {
+				email: {
+					msg: 'No se encuentra este email en nuestra BD'
+				}
+			},
+			oldData: req.body
+		});
 	},
 	profile: (req, res) => {
 		return res.render('userProfile');

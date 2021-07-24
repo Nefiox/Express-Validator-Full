@@ -15,7 +15,10 @@ router.post('/register', uploadFile.single('avatar'), validationMiddleware, user
 // Formulario de login
 router.get('/login', usersController.login);
 
+// Procesar formulario de login
+router.post('/login', usersController.loginProcess);
+
 // Perfil de Usuario
-router.get('/profile/:userId', usersController.profile);
+router.get('/profile', usersController.profile);
 
 module.exports = router;
