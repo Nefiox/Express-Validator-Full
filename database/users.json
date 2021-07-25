@@ -22,5 +22,13 @@
   "password": "$2a$10$oycnKvBVOFeeH1I8epzxRu/M4dTL3LwHCsVJ/RzcUzPrpbIa5x6h.",
   "country": "Brasil",
   "avatar": "1627105070293_img.png"
+ },
+ {
+  "id": 4,
+  "fullName": "Bongo",
+  "email": "black@gmail.com",
+  "password": "$2a$10$17iBsOCS1H5OgbCxxwyKM.QY4Z6SdqVDc0O7LECBmLmvvp7ydbL0i",
+  "country": "Argentina",
+  "avatar": "1627176829647_img.jpg"
  }
 ]

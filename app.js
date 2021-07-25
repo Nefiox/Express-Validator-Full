@@ -1,7 +1,18 @@
 const express = require('express');
+const session = require('express-session');
+const cookies = require('cookie-parser');
+const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
+
 
 const app = express();
 
+app.use(session({
+    secret: 'Misterio misterioso',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(cookies());
+app.use(userLoggedMiddleware);
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static('./public'));
