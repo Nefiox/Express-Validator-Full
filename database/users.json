@@ -1,34 +1,10 @@
 [
  {
   "id": 1,
-  "fullName": "UAMI",
-  "email": "guh9090@gmail.com",
-  "password": "$2a$10$Ye9UdA6e7VGjZ0KZki1JXeJz8P1/O8oBEHtFR7PDimGlfTydEpMaG",
-  "country": "Bolivia",
-  "avatar": "1627103580292_img.png"
- },
- {
-  "id": 2,
-  "fullName": "f3rews",
-  "email": "ladyeskorda@hotmail.com",
-  "password": "$2a$10$yLklN0mteJybox3fs0rj2.HBqXqNfOXh8bT5qN7fsraH7tHOVHqFC",
-  "country": "Bolivia",
-  "avatar": "1627103654045_img.png"
- },
- {
-  "id": 3,
-  "fullName": "GameFrags",
-  "email": "i@gmail.com",
-  "password": "$2a$10$oycnKvBVOFeeH1I8epzxRu/M4dTL3LwHCsVJ/RzcUzPrpbIa5x6h.",
-  "country": "Brasil",
-  "avatar": "1627105070293_img.png"
- },
- {
-  "id": 4,
-  "fullName": "Bongo",
-  "email": "black@gmail.com",
-  "password": "$2a$10$17iBsOCS1H5OgbCxxwyKM.QY4Z6SdqVDc0O7LECBmLmvvp7ydbL0i",
+  "fullName": "Jack McFly",
+  "email": "jack@gmail.com",
+  "password": "$2a$10$AyG5vpitPMWgphAkWCwLsu0bCo58WuF.pQr8SlfjhKyQBRV29VFfC",
   "country": "Argentina",
-  "avatar": "1627176829647_img.jpg"
+  "avatar": "1627179516147_img.jpg"
  }
 ]
